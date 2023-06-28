@@ -1,0 +1,27 @@
+﻿@page "/"
+
+<h1>Добро пожаловать в интернет магазин "Затейливый программист. 
+    <br />Время сервера @now
+    </h1>
+
+@code {
+    DateTime now = DateTime.Now;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Task.Run(async () =>
+    {
+        while (true)
+        {
+
+            await Task.Delay(1000);
+            now = DateTime.Now;
+            InvokeAsync(() => StateHasChanged());
+        }
+
+        });
+      
+    }
+        
+    }

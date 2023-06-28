@@ -1,0 +1,19 @@
+﻿@page "/catalog"
+@inject ICatalog Catalog
+
+<h3>Каталог нашего магазина</h3>
+@foreach (var product in products)
+{
+   <div>Название товара: @product.Name</div>
+   <div>Название товара: @product.Price</div>
+   <hr />
+}
+
+@code {
+    private List<Product>? products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await Catalog.GetProductsAsync();
+    }
+}
