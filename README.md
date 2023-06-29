@@ -5,4 +5,4 @@ Blazor позволяет создавать интерактивные веб-�
 
 Пример приложения на Blazor
 
-[Пример](https://www.codeproject.com/KB/Articles/1262541/blazordocker36.png)
+![Пример](https://www.codeproject.com/KB/Articles/1262541/blazordocker36.png)
