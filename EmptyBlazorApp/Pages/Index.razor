@@ -1,8 +1,12 @@
 ﻿@page "/"
 
-<h1>Добро пожаловать в интернет магазин "Затейливый программист. 
-    <br />Время сервера @now
-    </h1>
+<head>
+    <link href="/css/index.css" rel="stylesheet" />
+</head>
+
+<div class="clock">Время сервера @now</div>
+<h1>Добро пожаловать в интернет магазин "Затейливый программист"</h1>
+
 
 @code {
     DateTime now = DateTime.Now;
