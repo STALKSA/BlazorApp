@@ -1,5 +1,9 @@
 ﻿@page "/"
 
+@implements IDisposable
+
+@inject ILogger<Index> Logger
+
 <head>
     <link href="/css/index.css" rel="stylesheet" />
 </head>
@@ -9,23 +13,29 @@
 
 
 @code {
-    DateTime now = DateTime.Now;
+    private DateTime now = DateTime.Now;
+    private bool _disposed;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
         Task.Run(async () =>
     {
-        while (true)
+        while (!_disposed)
         {
-
             await Task.Delay(1000);
             now = DateTime.Now;
-            InvokeAsync(() => StateHasChanged());
+            Logger.LogInformation(now.ToString());
+            await InvokeAsync(() => StateHasChanged());
         }
 
-        });
-      
+    });
+
     }
-        
+
+    public void Dispose() 
+    {
+        _disposed = true;
+
     }
+}
