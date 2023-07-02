@@ -20,17 +20,6 @@ namespace EmptyBlazorApp
                 Price = price;
             }
 
-        public Product(Guid id, string name, string? description, decimal price, DateTime producedAt, DateTime expiredAt, double stock)
-		{
-			Id = id;
-			Name = name;
-			Description = description;
-			Price = price;
-			ProducedAt = producedAt;
-			ExpiredAt = expiredAt;
-			Stock = stock;
-		}
-
             public Guid Id { get; set; }
             public string Name { get; set; }
             public string? Description { get; set; }
