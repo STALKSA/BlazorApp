@@ -16,10 +16,20 @@ namespace EmptyBlazorApp
                     throw new ArgumentException($" {nameof(price)} не может быть меньше или равно 0");
                 }
 
-                Id = Guid.NewGuid();
                 Name = name;
                 Price = price;
             }
+
+        public Product(Guid id, string name, string? description, decimal price, DateTime producedAt, DateTime expiredAt, double stock)
+		{
+			Id = id;
+			Name = name;
+			Description = description;
+			Price = price;
+			ProducedAt = producedAt;
+			ExpiredAt = expiredAt;
+			Stock = stock;
+		}
 
             public Guid Id { get; set; }
             public string Name { get; set; }
